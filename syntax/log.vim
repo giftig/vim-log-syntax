@@ -17,6 +17,8 @@ syn match log_url '\v(\w+://\S+)'
 syn match log_date '\v<\d\{4}-\d{2}-\d{2}>'
 syn match log_time '\v<\d{2}:\d{2}:\d{2}([\.,]\d{3})?Z?>'
 
+syn match log_metric '\v(\@[a-zA-Z0-9_-]+\=[a-zA-Z0-9_-]+)'
+
 " Highlight defined patterns using standard syntax terms
 hi def link log_bool Type
 hi def link log_classname Type
@@ -29,6 +31,8 @@ hi def link log_time Type
 hi def link log_debug Comment
 hi def link log_error ErrorMsg
 hi def link log_warning WarningMsg
+
+hi def link log_metric Comment
 
 " Tell other syntax plugins we got dis
 let b:current_syntax = "log"
